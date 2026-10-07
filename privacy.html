@@ -78,15 +78,15 @@ footer a{color:var(--text-muted);text-decoration:underline}
 <main>
   <div class="label">Legal</div>
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective: July 14, 2026 · Last updated: July 14, 2026</p>
+  <p class="meta">Effective: October 6, 2026 · Last updated: October 6, 2026</p>
 
   <div class="summary">
     <p><strong>Plain-English summary</strong> (the full policy below governs): We collect as
-    little as we can. Your location is used on your device to find nearby crossings — we
-    don't store it. We keep an anonymous device token so we can send you push alerts, basic
-    anonymous analytics so we can fix bugs, and your email only if you give it to us for
-    the beta or referrals. We never sell personal information, and we never see your
-    payment card.</p>
+    little as we can. Your location is used on your device and is never sent to us. We keep
+    a random install ID and your notification settings so we can send the alerts you ask
+    for, a few anonymous usage events and crash reports so we can fix things, and the
+    crossing reports you choose to submit. No account is needed. We never sell personal
+    information, and there are no ads.</p>
   </div>
 
   <div class="toc" aria-label="Table of contents">
@@ -104,47 +104,73 @@ footer a{color:var(--text-muted);text-decoration:underline}
     <a href="#p12">12. Contact</a>
   </div>
 
+  <p>TrainClear (the "Service") is operated by Serag Sorror, an individual based in
+  Portland, Oregon ("we", "us"). This policy explains what the TrainClear app and this
+  website collect and why.</p>
+
   <h2 id="p1">1. What We Collect</h2>
 
-  <h3>1.1 Location (on-demand, not stored)</h3>
-  <p>When you open the app, we request your device's location to determine which crossings
-  are nearest to you and to center the map. Location is used in real time; we do not store
-  your precise location on our servers or build any history of where you have been. If you
-  deny location permission, the app still works — you can select crossings manually.</p>
+  <h3>1.1 Location (on your device, never uploaded)</h3>
+  <p>If you allow location access, the app uses your device's location while it is open to
+  center the map, to show a crossing's status automatically when you approach a crossing
+  with an active alert, and to check that you are within about half a mile of a crossing
+  before you can report it. These checks run on your device. We do not send your
+  coordinates to our servers or keep a location history. A crossing report does reveal
+  that someone was near that crossing at that time (see 1.3). We never request background
+  location. If you deny location access, the app still works.</p>
 
-  <h3>1.2 Push notification tokens</h3>
-  <p>To deliver blockage alerts, we store the anonymous push token that Apple (APNs) or
-  Google (FCM) assigns to your device, together with your alert preferences (which
-  crossings, quiet hours, lead time). The token identifies your device to the notification
-  service; it does not contain your name, number, or location.</p>
+  <h3>1.2 Notification settings and push tokens</h3>
+  <p>When you allow notifications, the app stores a push token issued through Expo's push
+  service (which delivers via Google Firebase Cloud Messaging or Apple Push Notification
+  service), together with your notification settings: which crossings, which train types
+  (freight, MAX, Amtrak/WES, and for how long), quiet hours, your platform and the app
+  version. These are stored under a random install ID (1.7). The token contains no name,
+  number or location. If the push service reports that the token is no longer valid (for
+  example after you uninstall), we clear it.</p>
 
   <h3>1.3 Crossing reports</h3>
-  <p>If you submit a crossing report ("train present" / "train cleared"), we collect the
-  crossing identifier, report type, timestamp, and an anonymous device identifier used for
-  abuse prevention. Reports are not linked to your name or email.</p>
+  <p>If you submit a report ("train here" / "all clear"), we store the crossing, the report
+  type, the time, and, if you choose, whether it was a freight or passenger train. A copy
+  visible to other app users contains no identifier at all. A separate, non-public copy
+  carries a random per-install report token, used only to tell a second, different
+  reporter apart from the same person tapping twice. Reports are never linked to your
+  name or email.</p>
 
-  <h3>1.4 Subscription status</h3>
-  <p>If you subscribe to Pro, we receive a purchase-confirmation token from Apple or Google
-  to verify your entitlement. We never receive or store your card number, billing address,
-  or bank details — Apple and Google process all payments under their own privacy
-  policies.</p>
+  <h3>1.4 Payments</h3>
+  <p>TrainClear is currently free and has no in-app purchases. If we add paid features,
+  payments will be handled by Apple or Google and we will update this policy before that
+  happens.</p>
 
-  <h3>1.5 Analytics and crash data</h3>
-  <p>We use Google Firebase to collect anonymous, aggregated usage data: app opens, feature
-  usage, device model and OS version, crash reports, and coarse (city-level) region. This
-  is not linked to your identity.</p>
+  <h3>1.5 Usage analytics and crash reports</h3>
+  <p>We send a small set of in-app events to Google Analytics, such as which crossing you
+  opened, whether you opened a detour, tapped a notification, or saw a proximity pop-up.
+  They are tagged with the random install ID, never your name or email. Google derives an
+  approximate (city-level) region from your IP address. We use Sentry to receive crash
+  reports: the error, your device model, operating system and app version. Crash reports
+  are set up not to store your IP address, and never include your location,
+  screenshots, or anything you typed. On
+  Android, the Google Maps component collects device information, crash data and a
+  pseudonymous identifier under Google's own privacy policy.</p>
 
-  <h3>1.6 Email and referral data (only if you give it)</h3>
-  <p>If you join the beta waitlist on our website or in the app, we collect the name,
-  email, and role (e.g., commuter, cyclist) you provide, and use them to send your invite
-  and service updates. If you participate in the referral program, we store the linkage
-  between your referral code and signups it produced, to credit your free months.</p>
+  <h3>1.6 Email</h3>
+  <p>The app has no accounts. We collect your email only if you choose to contact us, or
+  if you sign up for beta news on this website (1.8).</p>
+
+  <h3>1.7 Install ID</h3>
+  <p>On first launch the app creates a random identifier. It is not derived from your
+  device's hardware IDs or advertising ID, and it resets if you reinstall. It lets us store
+  your notification settings and count app usage without knowing who you are.</p>
+
+  <h3>1.8 Website beta sign-up</h3>
+  <p>If you sign up for beta news on this website, we receive the name, email address and
+  role (such as commuter or cyclist) you enter, through our form provider (Formspree), and
+  use them only to send you TrainClear beta invites and launch news.</p>
 
   <h2 id="p2">2. What We Do NOT Collect</h2>
   <ul>
     <li>No continuous or background GPS tracking, and no location history.</li>
-    <li>No name, email, or phone number is required to use the free app.</li>
-    <li>No payment card data — ever. The app stores handle all billing.</li>
+    <li>No name, email, or phone number is needed to use the app.</li>
+    <li>No payment card data — ever.</li>
     <li>No contacts, photos, microphone audio, or camera data from your device.</li>
     <li>No advertising identifiers, no third-party ad SDKs, no cross-app tracking.</li>
     <li><strong>We do not sell personal information</strong>, and we do not share it for
@@ -155,12 +181,12 @@ footer a{color:var(--text-muted);text-decoration:underline}
   <div class="tbl-wrap">
   <table>
     <tr><th>Data</th><th>Use</th></tr>
-    <tr><td>Location (real-time)</td><td>Find nearby crossings, center the map, and select relevant alerts — then discarded</td></tr>
-    <tr><td>Push token + preferences</td><td>Deliver the alerts you asked for</td></tr>
-    <tr><td>Crossing reports</td><td>Corroborate predictions; train and evaluate models (anonymized)</td></tr>
-    <tr><td>Subscription token</td><td>Verify Pro entitlement</td></tr>
-    <tr><td>Analytics / crash data</td><td>Fix bugs, improve features, size infrastructure</td></tr>
-    <tr><td>Email (waitlist/referrals)</td><td>Send invites, service updates, and referral credits</td></tr>
+    <tr><td>Location (on device)</td><td>Center the map, show nearby crossing status, check you are near a crossing before reporting. Never uploaded</td></tr>
+    <tr><td>Push token + notification settings</td><td>Deliver the alerts you asked for</td></tr>
+    <tr><td>Crossing reports</td><td>Corroborate live status; measure and improve accuracy</td></tr>
+    <tr><td>Usage events (Google Analytics)</td><td>Understand which features are used; fix problems</td></tr>
+    <tr><td>Crash reports (Sentry)</td><td>Find and fix crashes</td></tr>
+    <tr><td>Email (only if you contact us or sign up for beta news)</td><td>Reply to you; send beta invites and launch news</td></tr>
   </table>
   </div>
   <p>We do not use your information for profiling that produces legal or similarly
@@ -172,8 +198,8 @@ footer a{color:var(--text-muted);text-decoration:underline}
   <ul>
     <li><strong>Publicly broadcast railroad radio</strong> (unencrypted defect-detector and
     road-channel audio). No user data is sent to or received from these sources.</li>
-    <li><strong>Public ODOT/city traffic cameras.</strong> These cameras show public
-    roadways and may incidentally capture vehicles or pedestrians in public view. We
+    <li><strong>Public ODOT/City of Portland traffic cameras.</strong> These cameras show
+    public roadways and may incidentally capture vehicles or pedestrians in public view. We
     process this imagery automatically to detect trains and gate states; we do not use it
     to identify individuals, read plates, or track anyone.</li>
     <li><strong>Amtrak public train-location API</strong> and <strong>TriMet public GTFS-RT
@@ -181,22 +207,29 @@ footer a{color:var(--text-muted);text-decoration:underline}
     <li><strong>Licensed commercial traffic-flow data.</strong> Aggregate road-speed data;
     no TrainClear user data is provided to these vendors.</li>
   </ul>
+  <p>We also keep frames from those public traffic cameras for a limited time and review
+  them, partly with automated AI tools provided by service providers (for example
+  Anthropic), to measure how accurate TrainClear is. These images come only from public
+  cameras. No images, audio or data from your device are ever used.</p>
 
   <h2 id="p5">5. Sharing and Disclosure</h2>
   <p>We do not sell personal information. We share information only:</p>
   <ul>
-    <li><strong>With service providers</strong> that process data on our behalf (e.g.,
-    Google Firebase for notifications, analytics, and crash reporting; cloud hosting
-    providers), bound to use it only for our purposes.</li>
+    <li><strong>With service providers</strong> that process data on our behalf (Google:
+    Firebase database, Google Analytics, Google Maps; Expo: push delivery and app updates;
+    Sentry: crash reports; Formspree: website beta sign-ups; Hetzner and Oracle Cloud: server hosting; Anthropic: automated
+    review of public camera images only, never user data), bound to use it only for our
+    purposes.</li>
     <li><strong>As aggregated, anonymized data.</strong> We may share aggregated crossing
     and prediction statistics (never personal information) with partners such as
-    emergency services or logistics companies, including through a B2B API. This data
-    cannot reasonably be used to identify you.</li>
+    emergency services or logistics companies. This data cannot reasonably be used to
+    identify you.</li>
     <li><strong>For legal reasons</strong>, if required by law, regulation, legal process,
     or enforceable governmental request, or to protect the rights, property, or safety of
     any person.</li>
-    <li><strong>In a business transfer</strong> (merger, acquisition, or asset sale), in
-    which case this policy continues to apply to previously collected data.</li>
+    <li><strong>In a business transfer</strong> (for example, if TrainClear becomes or is
+    acquired by a company), in which case this policy continues to apply to previously
+    collected data.</li>
   </ul>
 
   <h2 id="p6">6. Data Retention</h2>
@@ -204,20 +237,21 @@ footer a{color:var(--text-muted);text-decoration:underline}
   <table>
     <tr><th>Data</th><th>Retention</th></tr>
     <tr><td>Precise location</td><td>Not stored</td></tr>
-    <tr><td>Push token + preferences</td><td>Until you disable alerts, delete the app, or request deletion</td></tr>
-    <tr><td>Crossing reports</td><td>Retained in anonymized form for model training</td></tr>
-    <tr><td>Analytics (Firebase)</td><td>Up to 14 months (Google's user-level retention setting)</td></tr>
-    <tr><td>Waitlist/referral email</td><td>Until you unsubscribe or request deletion</td></tr>
+    <tr><td>Push token + notification settings</td><td>Until you turn off notifications or request deletion. Tokens the push service reports as invalid are cleared automatically</td></tr>
+    <tr><td>Crossing reports</td><td>Retained without personal identifiers to measure accuracy</td></tr>
+    <tr><td>Usage events (Google Analytics)</td><td>Per our Google Analytics data-retention setting, no longer than 14 months</td></tr>
+    <tr><td>Crash reports (Sentry)</td><td>No longer than 90 days</td></tr>
+    <tr><td>Email</td><td>Until you ask us to delete it or unsubscribe</td></tr>
   </table>
   </div>
 
   <h2 id="p7">7. Your Rights and Choices</h2>
   <h3>7.1 Everyone</h3>
-  <p>Regardless of where you live, you can email
-  <a href="mailto:privacy@trainclear.com">privacy@trainclear.com</a> to ask what data we
-  hold associated with your device or email, request correction or deletion, or opt out of
-  non-essential emails (every marketing email also has an unsubscribe link). You can
-  disable push notifications and location access at any time in your device settings.</p>
+  <p>Regardless of where you live, you can email <a href="mailto:CONTACT_EMAIL_PLACEHOLDER">CONTACT_EMAIL_PLACEHOLDER</a> to ask what data we hold, or to
+  request correction or deletion. Because the app has no accounts, we usually cannot tell
+  which records are yours: turning off notifications in the app and uninstalling removes
+  your push token, and we will delete any other record you can help us identify. You can
+  disable notifications and location access at any time in your device settings.</p>
   <h3>7.2 Oregon residents (OCPA)</h3>
   <p>Under the Oregon Consumer Privacy Act you may have the right to access, correct,
   delete, and obtain a copy of personal data, and to opt out of targeted advertising,
@@ -228,25 +262,21 @@ footer a{color:var(--text-muted);text-decoration:underline}
   <h3>7.3 California residents (CCPA/CPRA)</h3>
   <p>You have the right to know, delete, correct, and opt out of sale/sharing of personal
   information, and to non-discrimination for exercising these rights. We do not sell or
-  share personal information as defined by the CCPA. Submit requests to
-  <a href="mailto:privacy@trainclear.com">privacy@trainclear.com</a>; we will verify
-  requests using the email or device identifier associated with your data.</p>
+  share personal information as defined by the CCPA. Submit requests to <a href="mailto:CONTACT_EMAIL_PLACEHOLDER">CONTACT_EMAIL_PLACEHOLDER</a>.</p>
   <h3>7.4 Global Privacy Control</h3>
   <p>Our website does not use cross-site tracking, so there is nothing for a GPC signal to
   opt you out of — but we honor the intent of such signals.</p>
 
   <h2 id="p8">8. Children's Privacy</h2>
-  <p>The Service is intended for users 16 and older and is not directed at children under
-  13. We do not knowingly collect personal information from children under 13; if we learn
-  that we have, we will delete it promptly. Parents or guardians may contact
-  <a href="mailto:privacy@trainclear.com">privacy@trainclear.com</a>.</p>
+  <p>The Service is intended for adults 18 and older and is not directed at children. We
+  do not knowingly collect personal information from anyone under 18; if we learn that we
+  have, we will delete it promptly. Parents or guardians may contact <a href="mailto:CONTACT_EMAIL_PLACEHOLDER">CONTACT_EMAIL_PLACEHOLDER</a>.</p>
 
   <h2 id="p9">9. Security</h2>
-  <p>We use commercially reasonable technical and organizational safeguards — encrypted
-  transport (TLS), access controls, and data minimization (the best safeguard is the data
-  we never collect). No system is perfectly secure, and we cannot guarantee absolute
-  security. The public feeds we consume are already public; we add no personal data to
-  them.</p>
+  <p>We use reasonable technical and organizational safeguards — encrypted transport
+  (TLS), access controls, and data minimization (the best safeguard is the data we never
+  collect). No system is perfectly secure, and we cannot guarantee absolute security. The
+  public feeds we consume are already public; we add no personal data to them.</p>
 
   <h2 id="p10">10. Where Data Is Processed</h2>
   <p>TrainClear operates from the United States, and the Service is offered for use in the
@@ -260,16 +290,15 @@ footer a{color:var(--text-muted);text-decoration:underline}
   Continued use after changes take effect constitutes acceptance.</p>
 
   <h2 id="p12">12. Contact</h2>
-  <p>TrainClear LLC · Portland, Oregon<br>
-  Privacy requests: <a href="mailto:privacy@trainclear.com">privacy@trainclear.com</a><br>
-  General: <a href="mailto:hello@trainclear.com">hello@trainclear.com</a></p>
+  <p>Serag Sorror (operator of TrainClear) · Portland, Oregon<br>
+  Privacy requests and general questions: <a href="mailto:CONTACT_EMAIL_PLACEHOLDER">CONTACT_EMAIL_PLACEHOLDER</a></p>
 </main>
 
 <footer>
-  <p>© 2026 TrainClear LLC · <a href="index.html">Home</a> ·
+  <p>© 2026 Serag Sorror · <a href="index.html">Home</a> ·
   <a href="terms.html">Terms of Service</a></p>
   <p style="margin-top:8px">TrainClear is not affiliated with Union Pacific Railroad, BNSF
-  Railway, Portland Terminal Railroad, Amtrak, TriMet, or ODOT.</p>
+  Railway, Portland Terminal Railroad, Amtrak, TriMet, ODOT, or the City of Portland.</p>
 </footer>
 
 </body>
