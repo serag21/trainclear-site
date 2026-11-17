@@ -1166,7 +1166,7 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;
 
 <!-- ═══════ FREE ═══════════════════════════════════ -->
 <section id="free" style="padding:96px 24px">
-  <div style="max-width:720px;margin:0 auto">
+  <div style="max-width:760px;margin:0 auto">
     <div class="rv" style="text-align:center">
       <div class="label" style="margin-bottom:12px">Price</div>
       <h2 style="font-size:clamp(2rem,4.5vw,3rem);font-weight:800;
@@ -1179,6 +1179,62 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;
         TrainClear is for planning your route — it is not a safety device, so always obey
         the gates and signals.
       </p>
+    </div>
+
+    <div class="rv" style="display:flex;flex-wrap:wrap;gap:16px;margin-top:36px;justify-content:center">
+      <!-- Free -->
+      <div class="price-card" style="flex:1;min-width:260px;max-width:340px">
+        <div style="margin-bottom:22px">
+          <div class="label" style="font-size:9px;margin-bottom:10px">Free</div>
+          <div class="mono" style="font-size:2.4rem;font-weight:700;color:var(--text-primary);line-height:1">$0</div>
+          <div style="font-size:13px;color:var(--text-muted);margin-top:6px">Everything the app does today.</div>
+        </div>
+        <div style="height:1px;background:var(--border);margin-bottom:20px"></div>
+          <div class="check-item">
+            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#f08014" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div style="font-size:13.5px;color:var(--text-secondary)"><strong style="color:var(--text-primary)">All 13 crossings</strong></div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#f08014" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div style="font-size:13.5px;color:var(--text-secondary)">Live blockage status and alerts</div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#f08014" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div style="font-size:13.5px;color:var(--text-secondary)">Detours via the nearest bridge or underpass, opened in your maps app</div>
+          </div>
+      </div>
+
+      <!-- Pro (coming soon, not purchasable) -->
+      <div class="price-card" style="flex:1;min-width:260px;max-width:340px;position:relative" aria-label="Pro plan, coming soon">
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+          background:var(--surface);color:var(--amber);border:1px solid var(--amber-dim);
+          font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;
+          text-transform:uppercase;padding:4px 14px;border-radius:100px;white-space:nowrap">
+          Coming soon
+        </div>
+        <div style="margin-bottom:22px">
+          <div class="label" style="font-size:9px;margin-bottom:10px">Pro</div>
+          <div class="mono" style="font-size:1.7rem;font-weight:700;color:var(--text-muted);line-height:1.4;white-space:nowrap">Coming soon</div>
+          <div style="font-size:13px;color:var(--text-muted);margin-top:6px">Not available yet. Nothing to buy today.</div>
+        </div>
+        <div style="height:1px;background:var(--border);margin-bottom:20px"></div>
+          <div class="check-item">
+            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#f08014" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div style="font-size:13.5px;color:var(--text-secondary)">Smart routing: origin &rarr; destination around blockages</div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#f08014" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div style="font-size:13.5px;color:var(--text-secondary)">Extended early warning</div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#f08014" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div style="font-size:13.5px;color:var(--text-secondary)">30-day crossing history</div>
+          </div>
+        <div style="margin-top:auto;padding-top:24px">
+          <button class="btn-ghost" type="button" disabled aria-disabled="true"
+            style="width:100%;justify-content:center;opacity:.55;cursor:not-allowed">Coming soon</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1205,13 +1261,17 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;
           <p style="font-size:15px;color:var(--text-secondary);line-height:1.7;
             max-width:500px;margin-bottom:28px">
             Every second matters when freight stands between a unit and a call.
-            The TrainClear API gives dispatch centers and fleets the same predictions
-            the app gets — so they can route around blockages
+            Dispatch centers and fleets can get the same predictions the app gets,
+            so they can route around blockages
             <strong style="color:var(--text-primary)">as soon as we see them</strong>,
             instead of finding out at the tracks.
           </p>
+          <p style="font-size:14px;color:var(--text-primary);margin-bottom:20px">
+            <strong>Business data API &mdash; coming soon.</strong>
+            <span style="color:var(--text-secondary)">Contact us for data access.</span>
+          </p>
           <a href="mailto:CONTACT_EMAIL_PLACEHOLDER" class="btn-primary" style="font-size:14px">
-            Contact for API Access →
+            Contact us →
           </a>
         </div>
         <div style="display:flex;flex-direction:column;gap:12px;flex-shrink:0">
@@ -1223,13 +1283,6 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;
               <path d="M30 28v11" stroke="#f08014" stroke-width="2.5" stroke-linecap="round"/>
               <circle cx="30" cy="44" r="2.2" fill="#f08014"/>
             </svg>
-          </div>
-          <div style="width:130px;padding:14px;border-radius:12px;
-            background:rgba(240,128,20,.07);border:1px solid rgba(240,128,20,.15)">
-            <div class="mono" style="font-size:1.05rem;font-weight:700;color:var(--amber)">Webhook + REST</div>
-            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;line-height:1.5">
-              The same live predictions, machine-readable
-            </div>
           </div>
         </div>
       </div>
